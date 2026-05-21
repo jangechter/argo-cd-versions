@@ -6,6 +6,7 @@ metadata:
 spec:
   parentRefs:
     - name: nginx-gateway-fabric-gateway
+      namespace: argocd
   hostnames:
     - "dummyservice.kubernetes.internal"
   rules:
