@@ -16,4 +16,4 @@ httpRoute:
 
 envVariables:
   - envName: service.hello-world-controller.response.name
-    envValue: "from HELM Values"
+    envValue: "from HELM Values with Argo CD"

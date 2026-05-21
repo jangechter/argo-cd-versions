@@ -16,4 +16,4 @@ httpRoute:
 
 envVariables:
   - envName: client.backend.url
-    envValue: "http://dummy-service-backend-service/"
+    envValue: "http://backend-service/"
