@@ -1,0 +1,19 @@
+image:
+  repository: cc-devopstraining-docker.valtech.io/frontend
+  # This sets the pull policy for images.
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+deployBackend:
+  enabled: false
+
+deployFrontend:
+  enabled: true
+
+httpRoute:
+  # HTTPRoute enabled.
+  enabled: true
+
+envVariables:
+  - envName: client.backend.url
+    envValue: "http://dummy-service-backend-service/"

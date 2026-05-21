@@ -1,0 +1,19 @@
+image:
+  repository: cc-devopstraining-docker.valtech.io/backend
+  # This sets the pull policy for images.
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+deployBackend:
+  enabled: true
+
+deployFrontend:
+    enabled: false
+
+httpRoute:
+  # HTTPRoute enabled.
+  enabled: false
+
+envVariables:
+  - envName: service.hello-world-controller.response.name
+    envValue: "from HELM Values"

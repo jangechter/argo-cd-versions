@@ -1,0 +1,12 @@
+{{- if .Values.deployBackend.enabled -}}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Release.Name }}-service
+spec:
+  selector:
+    app: {{ .Release.Name }}-app
+  ports:
+    - port: 80
+      targetPort: 9000
+{{ end }}

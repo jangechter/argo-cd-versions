@@ -1,0 +1,26 @@
+{{- if .Values.deployBackend.enabled -}}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+spec:
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}-app
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}-app
+    spec:
+      containers:
+        - image: cc-devopstraining-docker.valtech.io/backend
+          name: dummy-backend
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: 9000
+          env:
+            {{- range .Values.envVariables }}
+            - name: {{ .envName }}
+              value: {{ .envValue | quote }}
+            {{- end }}
+{{ end }}
